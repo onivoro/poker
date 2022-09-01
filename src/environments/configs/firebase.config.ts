@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyCc7iCCry8QTlMCharSXs90BmaO6LCVYJs",
-    authDomain: "poker-com.firebaseapp.com",
-    projectId: "poker-com",
-    storageBucket: "poker-com.appspot.com",
-    messagingSenderId: "751736442899",
-    appId: "1:751736442899:web:fd316a5353ca5ce242afe6"
-  };
+  apiKey: "AIzaSyCsjSWWMlop9D3k7YnZba49z_8OG-rDof0",
+  authDomain: "onivoro-poker.firebaseapp.com",
+  projectId: "onivoro-poker",
+  storageBucket: "onivoro-poker.appspot.com",
+  messagingSenderId: "814592573454",
+  appId: "1:814592573454:web:d2fa8bb7ac14ccd87b3c5f"
+};
