@@ -2,7 +2,7 @@
 @import 'variables';
 @include mat.core();
 
-$onivoro-primary: (
+$poker-primary: (
   50: $primary-color,
   100: $primary-color,
   200: $primary-color,
@@ -34,7 +34,7 @@ $onivoro-primary: (
     A700: $primary-color,
   ),
 );
-$onivoro-secondary: (
+$poker-secondary: (
   50: $accent-color,
   100: $accent-color,
   200: $accent-color,
@@ -66,7 +66,7 @@ $onivoro-secondary: (
     A700: $accent-color,
   ),
 );
-$onivoro-red: (
+$poker-red: (
   50: $red-color,
   100: $red-color,
   200: $red-color,
@@ -98,19 +98,19 @@ $onivoro-red: (
     A700: $red-color,
   ),
 );
-$onivoro-primary-palette: mat.define-palette($onivoro-primary);
-$onivoro-secondary-palette: mat.define-palette($onivoro-secondary);
-$onivoro-red-palette: mat.define-palette($onivoro-red);
+$poker-primary-palette: mat.define-palette($poker-primary);
+$poker-secondary-palette: mat.define-palette($poker-secondary);
+$poker-red-palette: mat.define-palette($poker-red);
 
-$onivoro-typography: mat.define-typography-config(
+$poker-typography: mat.define-typography-config(
   $font-family: 'Roboto, sans-serif',
 );
 
 $primary-light-theme: (
   color: (
-    primary: $onivoro-primary-palette,
-    accent: $onivoro-secondary-palette,
-    warn: $onivoro-red-palette,
+    primary: $poker-primary-palette,
+    accent: $poker-secondary-palette,
+    warn: $poker-red-palette,
     foreground: (
       base: $text-color,
       divider: $divider-color,
@@ -154,6 +154,6 @@ $primary-light-theme: (
 );
 
 @include mat.all-component-themes($primary-light-theme);
-@include mat.all-component-typographies($onivoro-typography);
+@include mat.all-component-typographies($poker-typography);
 
 
