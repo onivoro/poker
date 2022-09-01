@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { LayoutComponent } from './components/layout/layout.component';
-import { ItemsComponent } from './components/items/items.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -22,17 +21,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RoomComponent } from './components/room/room.component';
+import { PlayerFormComponent } from './components/player-form/player-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    ItemsComponent,
     HomeComponent,
     NavComponent,
-    ContactFormComponent,
+    RoomComponent,
+    PlayerFormComponent,
   ],
   imports: [
     MatCardModule,

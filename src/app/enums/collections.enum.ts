@@ -1,3 +1,4 @@
 export enum Collections {
-    Contacts='items'
+    Players='players',
+    Rooms='rooms',
 }
