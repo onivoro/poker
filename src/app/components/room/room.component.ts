@@ -1,7 +1,7 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, filter, of, take, tap } from 'rxjs';
+import { concatMap, filter, of, Subscription, take, tap } from 'rxjs';
 import { RouteParams } from 'src/app/enums/route-params.enum';
 import { PlayerRepository } from 'src/app/repositories/player-repository';
 import { IPlayer } from 'src/app/types/player.interface';
@@ -12,23 +12,29 @@ import { PlayerFormComponent } from '../player-form/player-form.component';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements AfterViewInit {
+export class RoomComponent implements AfterViewInit, OnDestroy {
   players$ = this.playerRepository.list$();
   cards$ = of([1, 3, 5, 8, 13, 21])
   player!: IPlayer;
   playerId!: string;
+  subscription!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private playerRepository: PlayerRepository,
-    private dialog: MatDialog
+    private dialog: MatDialog,
   ) {
   }
-  ngAfterViewInit(): void {
+
+  async ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  ngAfterViewInit() {
     this.playerId = this.route.snapshot.params[RouteParams.PlayerId];
 
-    of().pipe(
+    this.subscription = of(this.playerId).pipe(
       filter(playerId => !playerId),
       take(1),
       concatMap(() =>

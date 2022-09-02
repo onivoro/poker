@@ -18,7 +18,8 @@ export abstract class AbstractRepository<TDoc extends IIdentifiable> {
         return await setDoc(this.#getDocRef(doc.id), doc, { merge: false });
     }
 
-    async del(docRef: DocumentReference) {
+    async del(id: string) {
+        const docRef = this.#getDocRef(id);
         return await deleteDoc(docRef);
     }
 
