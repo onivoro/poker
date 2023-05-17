@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card appearance="outlined">
     <mat-card-title>Players</mat-card-title>
     <mat-list>
         <mat-list-item *ngFor="let player of players$ | async">{{player.name}} {{player.vote}}</mat-list-item>

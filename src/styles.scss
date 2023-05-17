@@ -8,7 +8,7 @@ body {
 
 }
 
-.content, .mat-card {
+.content, .mat-mdc-card {
   max-width: 1200px;
   margin: auto;
   padding: 1rem;
@@ -39,7 +39,7 @@ body {
   background-size: cover;
 }
 
-.mat-card {
+.mat-mdc-card {
   width: calc(100% - 2rem);
   box-sizing: border-box;
   margin: 1rem;
