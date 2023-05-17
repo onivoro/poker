@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import { RouteParams } from '../enums/route-params.enum';
 import { PlayerRepository } from '../repositories/player-repository';
@@ -7,7 +7,7 @@ import { PlayerRepository } from '../repositories/player-repository';
 @Injectable({
   providedIn: 'root'
 })
-export class UpsertPlayerGuard  {
+export class UpsertPlayerGuard implements CanActivate {
   constructor(private playerRepository: PlayerRepository) { }
 
   canActivate(
